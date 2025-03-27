@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .crossed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calendar - March 2025</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" id="day1"> 1</td>
+                <td><input type="checkbox" id="day2"> 2</td>
+                <td><input type="checkbox" id="day3"> 3</td>
+                <td><input type="checkbox" id="day4"> 4</td>
+                <td><input type="checkbox" id="day5"> 5</td>
+                <td><input type="checkbox" id="day6"> 6</td>
+                <td><input type="checkbox" id="day7"> 7</td>
+            </tr>
+            <!-- Repeat rows for the remaining days -->
+            <tr>
+                <td><input type="checkbox" id="day8"> 8</td>
+                <td><input type="checkbox" id="day9"> 9</td>
+                <td><input type="checkbox" id="day10"> 10</td>
+                <td><input type="checkbox" id="day11"> 11</td>
+                <td><input type="checkbox" id="day12"> 12</td>
+                <td><input type="checkbox" id="day13"> 13</td>
+                <td><input type="checkbox" id="day14"> 14</td>
+            </tr>
+            <!-- More rows as needed -->
+        </tbody>
+    </table>
+
+    <button onclick="crossPreviousDay()">Cross Previous Day</button>
+
+    <script>
+        function crossPreviousDay() {
+            const today = new Date();
+            const previousDay = new Date(today);
+            previousDay.setDate(today.getDate() - 1);
+            const day = previousDay.getDate();
+            const checkbox = document.getElementById(`day${day}`);
+            if (checkbox) {
+                checkbox.checked = true;
+                checkbox.parentElement.classList.add('crossed');
+            } else {
+                alert("No previous day found in the calendar.");
+            }
+        }
+    </script>
+</body>
+</html>
