@@ -1,367 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Photography Portfolio</title>
+    <title>Calendar</title>
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s ease;
-        }
-
-        h1, h2 {
-            font-family: 'Georgia', serif;
-            text-align: center;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px;
-            margin-bottom: 30px;
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        /* Hero Section Styling */
-        .hero {
-            position: relative;
-            height: 100vh;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-        }
-
-        .hero-slider {
-            display: flex;
-            animation: slide 15s infinite;
-        }
-
-        .hero-slider img {
+        table {
             width: 100%;
-            height: 100vh;
-            object-fit: cover;
+            border-collapse: collapse;
         }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            33% {
-                transform: translateX(-100%);
-            }
-
-            66% {
-                transform: translateX(-200%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* Gallery Filter Buttons */
-        .filter-buttons {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .filter-btn:hover {
-            background-color: #555;
-        }
-
-        .gallery-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .photo img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .photo img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            width: 80%;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* Contact Form */
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input,
-        textarea {
-            margin: 10px 0;
+        td, th {
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
         }
-
-        button {
-            padding: 15px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .crossed {
+            text-decoration: line-through;
         }
-
-        button:hover {
-            background-color: #555;
-        }
-
-        /* Social Media Links */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover img {
-            transform: scale(1.2);
-        }
-
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #121212;
-            color: white;
-        }
-
-        .dark-mode nav {
-            background-color: #333;
-        }
-
-        .dark-mode .hero {
-            background-color: #1f1f1f;
-        }
-
-        .dark-mode .photo img {
-            border: 3px solid white;
-        }
-
-        .dark-mode button {
-            background-color: #444;
-            color: white;
-        }
-
     </style>
 </head>
-
 <body>
+    <h2>Calendar - March 2025</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" id="day1"> 1</td>
+                <td><input type="checkbox" id="day2"> 2</td>
+                <td><input type="checkbox" id="day3"> 3</td>
+                <td><input type="checkbox" id="day4"> 4</td>
+                <td><input type="checkbox" id="day5"> 5</td>
+                <td><input type="checkbox" id="day6"> 6</td>
+                <td><input type="checkbox" id="day7"> 7</td>
+            </tr>
+            <!-- Repeat rows for the remaining days -->
+            <tr>
+                <td><input type="checkbox" id="day8"> 8</td>
+                <td><input type="checkbox" id="day9"> 9</td>
+                <td><input type="checkbox" id="day10"> 10</td>
+                <td><input type="checkbox" id="day11"> 11</td>
+                <td><input type="checkbox" id="day12"> 12</td>
+                <td><input type="checkbox" id="day13"> 13</td>
+                <td><input type="checkbox" id="day14"> 14</td>
+            </tr>
+            <!-- More rows as needed -->
+        </tbody>
+    </table>
 
-    <!-- Navbar -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Photography Portfolio</h1>
-            <p>Explore my journey through the lens, capturing nature, moments with friends, and more.</p>
-        </div>
-        <div class="hero-slider">
-            <img src="nature1.jpg" alt="Nature Photo">
-            <img src="homies1.jpg" alt="Homies Photo">
-            <img src="selfie1.jpg" alt="Selfie Photo">
-        </div>
-    </section>
-
-    <!-- Gallery Section with Filters -->
-    <section id="gallery">
-        <h2>My Photos</h2>
-        <div class="filter-buttons">
-            <button class="filter-btn" onclick="filterGallery('nature')">Nature</button>
-            <button class="filter-btn" onclick="filterGallery('selfie')">Selfies</button>
-            <button class="filter-btn" onclick="filterGallery('homies')">Homies</button>
-        </div>
-        <div class="gallery-container">
-            <div class="photo nature" onclick="openModal(1)">
-                <img src="nature1.jpg" alt="Nature Photo">
-            </div>
-            <div class="photo selfie" onclick="openModal(2)">
-                <img src="selfie1.jpg" alt="Selfie Photo">
-            </div>
-            <div class="photo homies" onclick="openModal(3)">
-                <img src="homies1.jpg" alt="Homies Photo">
-            </div>
-            <!-- More photos with respective classes -->
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a passionate photographer who loves capturing moments from life. My work is a blend of nature, friendships, and personal stories.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="submit_form.php" method="POST">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-            <textarea name="message" id="message" rows="5" placeholder="Your message here..." required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Social Media Section -->
-    <section id="social">
-        <h2>Follow Me</h2>
-        <div class="social-links">
-            <a href="https://www.instagram.com/yourusername" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram">
-            </a>
-            <a href="https://www.facebook.com/yourusername" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook">
-            </a>
-            <!-- Add more social links as needed -->
-        </div>
-    </section>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" class="modal-content" alt="Selected Image">
-    </div>
-
-    <button id="darkModeToggle">Dark Mode</button>
+    <button onclick="crossPreviousDay()">Cross Previous Day</button>
 
     <script>
-        // Image Modal Functionality
-        function openModal(imageId) {
-            const modal = document.getElementById("imageModal");
-            const modalImage = document.getElementById("modalImage");
-            const imageSrc = document.querySelector(`.photo:nth-child(${imageId}) img`).src;
-
-            modal.style.display = "flex";
-            modalImage.src = imageSrc;
+        function crossPreviousDay() {
+            const today = new Date();
+            const previousDay = new Date(today);
+            previousDay.setDate(today.getDate() - 1);
+            const day = previousDay.getDate();
+            const checkbox = document.getElementById(`day${day}`);
+            if (checkbox) {
+                checkbox.checked = true;
+                checkbox.parentElement.classList.add('crossed');
+            } else {
+                alert("No previous day found in the calendar.");
+            }
         }
-
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-
-        // Filter Gallery Function
-        function filterGallery(category) {
-            const photos = document.querySelectorAll('.photo');
-            photos.forEach(photo => {
-                if (photo.classList.contains(category) || category === 'all') {
-                    photo.style.display = 'block';
-                } else {
-                    photo.style.display = 'none';
-                }
-            });
-        }
-
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
     </script>
-
 </body>
-
 </html>
